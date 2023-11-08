@@ -19,7 +19,7 @@ contract OracleReaderScript is Script {
     ///         script/OracleReader.s.sol:OracleReaderScript
     ///      ```
     function deploy() public {
-        // TODO: Add the address of the oracle to read here.
+        // TODO: Add the address of the oracle you want to read.
         address oracle = address(0);
 
         OracleReader deployed = new OracleReader(oracle);
@@ -31,7 +31,6 @@ contract OracleReaderScript is Script {
     ///
     ///      ```bash
     ///      forge script \
-    ///         --broadcast \
     ///         --rpc-url <rpc_url> \
     ///         --sig $(cast calldata "read()" \
     ///         -vv \
