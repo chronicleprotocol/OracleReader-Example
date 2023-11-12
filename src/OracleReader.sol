@@ -10,6 +10,9 @@ contract OracleReader {
         chronicle = IChronicle(oracle);
     }
 
+    // Function to read the latest data from the Chronicle oracle
+    // @return val: The current value returned by the oracle
+    // @return age: The timestamp of the last update from the oracle
     function read() external view returns (uint, uint) {
         uint val;
         uint age;
