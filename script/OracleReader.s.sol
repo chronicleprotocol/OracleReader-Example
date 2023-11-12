@@ -19,8 +19,8 @@ contract OracleReaderScript is Script {
     ///         script/OracleReader.s.sol:OracleReaderScript
     ///      ```
     function deploy() public {
-        // TODO: Add the address of the oracle you want to read.
-        address oracle = address(0);
+        // TODO: Replace `0x` with the address of the oracle you want to read.
+        address oracle = address(0x);
 
         OracleReader deployed = new OracleReader(oracle);
 
@@ -37,8 +37,8 @@ contract OracleReaderScript is Script {
     ///         script/OracleReader.s.sol:OracleReaderScript
     ///      ```
     function read() public {
-        // TODO: Add the address of your deployed OracleReader.
-        OracleReader reader = OracleReader(address(0));
+        // TODO: Replace `0x` with the address of your deployed OracleReader.
+        OracleReader reader = OracleReader(address(0x));
 
         uint val;
         uint age;
