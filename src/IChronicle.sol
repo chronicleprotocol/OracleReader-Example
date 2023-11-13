@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.16;
 
+// Copied from [chronicle-std/IChronicle](https://github.com/chronicleprotocol/chronicle-std/blob/main/src/IChronicle.sol).
+
 /**
  * @title IChronicle
  *
