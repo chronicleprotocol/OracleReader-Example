@@ -15,16 +15,14 @@ contract OracleReaderScript is Script {
     ///         --rpc-url <rpc_url> \
     ///         --private-key <private_key> \
     ///         --sig $(cast calldata "deploy()" \
-    ///         -vv \
+    ///         -vvvv \
     ///         script/OracleReader.s.sol:OracleReaderScript
     ///      ```
     function deploy() public {
-        // TODO: Replace `0x0` with the address of the oracle you want to read.
-        address oracle = address(0x0);
+        vm.broadcast();
+        OracleReader deployed = new OracleReader();
 
-        OracleReader deployed = new OracleReader(oracle);
-
-        console.log("OracleReader deployed at", deployed);
+        console.log("OracleReader deployed at", address(deployed));
     }
 
     /// @dev Read via:
@@ -33,18 +31,19 @@ contract OracleReaderScript is Script {
     ///      forge script \
     ///         --rpc-url <rpc_url> \
     ///         --sig $(cast calldata "read()" \
-    ///         -vv \
+    ///         -vvvv \
     ///         script/OracleReader.s.sol:OracleReaderScript
     ///      ```
-    function read() public {
+    function read() public view {
         // TODO: Replace `0x0` with the address of your deployed OracleReader.
-        OracleReader reader = OracleReader(address(0x0));
+        OracleReader reader = OracleReader(address(0x25bD61dD2c503dD4EF3f730D71E127bA7FeDDc79));
 
-        uint val;
-        uint age;
+        uint256 val;
+        uint256 age;
         (val, age) = reader.read();
 
         console.log("Val", val);
         console.log("Age", age);
+        console.log("Note that val is in 18 decimal precision");
     }
 }
